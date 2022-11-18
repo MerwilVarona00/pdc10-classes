@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            list-style: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* table */
+        .content-table {
+            border-collapse: collapse;
+            margin: 50px 0;
+            font-size: 0.9em;
+            min-width: 75%;
+        }
+        .content-table thead tr {
+            background-color: #D50000;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .content-table th,
+        .content-table td {
+            padding: 20px 30px;
+        }
+        .content-table tbody tr {
+            border-bottom: 1px solid #8C0000;
+        }
+        .body{
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .body h1{
+            margin-top: 80px;
+            color: red;
+            letter-spacing: 20px;
+            font-size: 45px;
+
+        }
+
+
+        /* navbar */
+        .main{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            text-align: center;
+        }
+        .class{
+            width: 12%;
+            background-color: rgb(0, 0, 0);
+        }
+        #logo{
+            color: red;
+            font-size: 30px;
+            letter-spacing: 1px;
+            padding: 14px;
+            background-color: #000;
+        }
+        .class a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            letter-spacing: 2px;
+            display: list-item;
+            padding: 18px;
+            border-top: 20px solid black;
+            border-bottom: 1px solid black;
+        }
+        .class a:hover{
+            background-color: red;
+            transition: 0.5s;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        /* dark mode button */
+        .dark-mode {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        }
+        #darkmode{
+            width: 140px;
+            height: 20px;
+            font-size: 16px;
+            letter-spacing: 4px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            position: relative;
+            transition: all 0.5s;
+            z-index: 1;
+        }
+        #darkmode::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: rgb(252, 252, 252);
+            z-index: -1;
+            transition: all 0.5s;
+        }
+        #darkmode:hover::before{
+            width: 100%;
+        }
+        #darkmode:hover{
+            color: rgb(32, 32, 32);
+        }
+        #darkmode:active:before{
+            background-color: #b9b9b9;
+        }
+    </style>
+
+    <!-- script -->
+    <script>
+    function darkMode() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+    }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <div class="class">
+            <a href="../classes/index.mustache">Class</a>
+            <a href="../teachers/index.mustache">Teacher</a>
+            <a href="../students/index.mustache">Student</a>
+            <a href="../class_roster/index.mustache">Class Roster</a>
+            <br>
+            <button onclick="darkMode()" id="darkmode">Darkmode</button>
+        </div>
+
+        <div class="body">
+        <h1 style="text-align:center">STUDENTS</h1>
+        <br>
+        <div class="col-0">
+        <a type="button" href="../students/add.php" class="btn btn-btn btn-outline-secondary btn-lg ms-2" style="float: right;">Add Student</a>
+        </div> 
+        <br>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Student Number</th>
+                    <th>Email</th>
+                    <th>Contact Number</th>
+                    <th>Program</th>
+                    <th>Action</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ id }}</td>
+                    <td>{{ first_name }}</td>
+                    <td>{{ last_name }}</td>
+                    <td>{{ student_number }}</td>
+                    <td>{{ email }}</td>
+                    <td>{{ contact_number }}</td>
+                    <td>{{ program }}</td>
+                    <td width="20%">
+                    <a href="../students/edit.php?id={{id}}" class="btn btn-outline-success" style="width: 80px">Update</a>
+                    <a href="../students/delete.php?id={{id}}" class="btn btn-outline-danger"  style="width: 90px">Remove</a>
+                    </td>                
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

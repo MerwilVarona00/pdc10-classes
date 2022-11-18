@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>form</title>
+
+  <!-- CSS -->
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: black;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items:center !important;
+  height: 100vh;
+}
+.form{
+  width: 350px;
+  height: 500px;
+  background-color: rgba(41, 39, 39, 0.3);
+  box-shadow: 0 5px 30px black;
+}
+.btn button {
+  padding: 3px;
+  margin: 30px 0px 40px 30px;
+  border-style: none;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 550;
+}
+.formGroup{
+  display: flex;
+  justify-content: center;
+}
+.formGroup input{
+  border: none;
+  width: 80%;
+  border-bottom: 2px solid white;
+  padding: 10px;
+  margin-bottom: 28px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+}
+input:focus {
+  outline: none !important;
+  border-bottom: 2px solid rgb(140, 0, 0);
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+}
+::placeholder {
+  color: white;
+}
+
+.btn2{
+  padding: 10px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: rgb(199, 3, 3);
+  border-style: none;
+  color: white;
+  font-weight: 600;
+}
+.btn2:hover{
+  background-color: rgba(93, 0, 0);
+}
+.btn button:hover{
+  border-bottom: 2px solid rgb(140, 0, 0);
+}
+ 
+/* hide signup form */
+.login{
+  display: none;
+}
+ 
+/* Login form code */
+.login{
+  margin-top: 40px;
+}
+.login .checkBox{
+  margin-top: 30px !important;
+}
+</style>
+</head>
+ 
+<body>
+  <div class="container">
+    <div class="form">
+      <div class="btn">
+        <button class="loginBtn">REGISTRATION FORM</button>
+
+      </div>
+      <form class="signUp" action="" method="get">
+        <div class="formGroup">
+          <input type="text" id="userName" placeholder="First Name" autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="text" id="userName" placeholder="Last Name" autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="email" placeholder="Email ID" name="email" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="contact" id="contact" placeholder="Contact" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <input type="employee" id="employee" placeholder="Employee Number" required autocomplete="off">
+        </div>
+        <div class="formGroup">
+          <button type="button" class="btn2">REGISTER</button>
+        </div>
+    </div>
+</body>
+ 
+</html>
